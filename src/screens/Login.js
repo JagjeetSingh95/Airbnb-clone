@@ -84,7 +84,7 @@ export default class Login extends Component {
   }
 
   render() {
-    const { formValue, loadingVisible } = this.state;
+    const { formValue, loadingVisible, vaildEmail, validPassword } = this.state;
     const showNotification = formValue ? false : true;
     const background = formValue ? colors.green01 : colors.darkOrange;
     const notificationMarginTop = showNotification ? 10 : 0
@@ -108,6 +108,8 @@ export default class Login extends Component {
               inputType="email"
               customStyle={{marginBottom: 30}}
               onChangeText={this.handleEmailChange}
+              showCheckmark={vaildEmail}
+              autoFocus={true}
               />
             <InputField 
               labelText="PASSWORD"
@@ -118,6 +120,7 @@ export default class Login extends Component {
               inputType="password"
               customStyle={{marginBottom: 30}}
               onChangeText={this.handlePasswordChange}
+              showCheckmark={validPassword}
               />
           </ScrollView>
           <View style={styles.nextButton}>
