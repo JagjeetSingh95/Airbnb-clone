@@ -30,6 +30,7 @@ export default class NextArrowButton extends Component {
 }
 
 NextArrowButton.PropTypes =  {
+  disabled: PropTypes.bool,
   handleNextButton: PropTypes.func
 }
 
