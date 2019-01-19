@@ -22,6 +22,7 @@ export default class Login extends Component {
     return (
       <KeyboardAvoidingView 
         style={styles .wrapper}
+        behavior="padding"
         >
         <View 
           style={styles.scrollViewWrapper}
