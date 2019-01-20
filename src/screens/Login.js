@@ -8,10 +8,7 @@ import {
   ScrollView,
   KeyboardAvoidingView
 } from 'react-native';
-import { connect } from 'react-redux';
-import { bindActionCreators } from 'redux';
 
-import { ActionCreators } from '../redux/actions';
 import colors from '../styles/colors';
 import InputField from '../components/form/InputField';
 import NextArrowButton from '../components/buttons/NextArrowButton';
@@ -41,7 +38,7 @@ class Login extends Component {
 
     setTimeout(() => {
       const { emailAddres, password } = this.state;
-      if(this.props.login(emailAddres, password)) {
+      if(emailAddres === 'jaggi@gmail.com', password === '12345') {
         this.setState({ formValue: true, loadingVisible: false });
         } else {
             this.setState({ formValue: false, loadingVisible: false }); 
@@ -184,14 +181,4 @@ const styles = StyleSheet.create({
   }
 })
 
-const mapStateToProps = (state) => {
-  return {
-    loggedInStatus: state.loggedInStatus
-  }
-}
-
-const mapDispatchToProps = (dispatch) => {
-  return bindActionCreators(ActionCreators, dispatch);
-}
-
-export default connect(mapStateToProps, mapDispatchToProps)(Login)
+export default Login
